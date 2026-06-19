@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EraSync — Bridge the Generation Gap</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+    <nav class="site-nav">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-logo-link">
+          <img
+            src="assets/logo-white.png"
+            alt="EraSync Logo"
+            class="nav-logo-img"
+            height="32"
+            width="auto"
+          />
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <span class="nav-link-item active">Home</span>
+        <span class="nav-link-item">Slang</span>
+        <span class="nav-link-item">Memes</span>
+        <span class="nav-link-item">Trends</span>
+        <span class="nav-link-item">
+          <i class="bi bi-bar-chart-line"></i> Analytics
+        </span>
+      </div>
+
+      <div class="nav-actions">
+        <div class="nav-icon-btn"><i class="bi bi-search"></i></div>
+        <div class="nav-icon-btn">
+          <i class="bi bi-bell"></i>
+          <span class="notif-dot"></span>
+        </div>
+        <button class="btn-login">Login</button>
+        <button class="btn-signup">Sign up</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Dark overlay behind the drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Side drawer (slides in from the right) -->
+    <div class="side-drawer" id="sideDrawer">
+      <!-- Drawer header -->
+      <div class="drawer-header">
+  <div class="nav-logo">
+    <a href="index.html" class="nav-logo-link">
+      <img 
+        src="assets/logo-white.png" 
+        alt="EraSync Logo" 
+        class="nav-logo-img"
+        height="28"
+        width="auto"
+      />
+    </a>
+  </div>
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+    <i class="bi bi-x-lg"></i>
+  </button>
+</div>
+
+      <!-- Drawer nav links -->
+      <div class="drawer-links">
+        <span class="drawer-link active">Home</span>
+        <span class="drawer-link">Slang</span>
+        <span class="drawer-link">Memes</span>
+        <span class="drawer-link">Trends</span>
+        <span class="drawer-link">
+          <i class="bi bi-bar-chart-line"></i> Analytics
+        </span>
+      </div>
+
+      <!-- Drawer auth buttons -->
+      <div class="drawer-auth">
+        <button class="btn-login drawer-btn-full">Login</button>
+        <button class="btn-signup drawer-btn-full">Sign up</button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-eyebrow">
+        <i class="bi bi-stars"></i>
+        Bridge the generation gap
+      </div>
+
+      <h1 class="hero-heading">
+        Speak every vibe,<br />
+        understand every <span class="era-word">era</span>
+      </h1>
+
+      <p class="hero-subtext">
+        The go-to platform for Gen X, Millennials, Gen Z &amp; Gen Alpha to
+        discover slang, memes and trends — all in one place.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn-primary-lg">
+          <i class="bi bi-rocket-takeoff"></i> Explore now
+        </button>
+        <button class="btn-ghost-lg">
+          <i class="bi bi-play-circle"></i> How it works
+        </button>
+      </div>
+
+      <div class="gen-pills">
+        <span class="gen-pill active">All generations</span>
+        <span class="gen-pill">Gen X</span>
+        <span class="gen-pill">Millennials</span>
+        <span class="gen-pill">Gen Z</span>
+        <span class="gen-pill">Gen Alpha</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+       STATS BAR
+  ═══════════════════════════════════ -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">4,200+</div>
+        <div class="stat-label">Slang terms</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">12k+</div>
+        <div class="stat-label">Memes uploaded</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">983+</div>
+        <div class="stat-label">Trends tracked</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">38k+</div>
+        <div class="stat-label">Community members</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+       MAIN CONTENT + SIDEBAR
+  ═══════════════════════════════════ -->
+    <div class="main-content">
+      <!-- ── LEFT COLUMN ── -->
+      <div>
+        <!-- SECTION: Featured today -->
+        <div class="section-block">
+          <div class="section-header">
+            <div class="section-title">
+              <i class="bi bi-lightning-charge-fill icon-amber"></i>
+              Featured today
+            </div>
+            <span class="section-link">See all</span>
+          </div>
+          <div class="cards-grid-3">
+            <div class="content-card">
+              <span class="ctag ctag-slang">Slang</span>
+              <div class="card-title">Rizz</div>
+              <div class="card-meta">Gen Z &nbsp;·&nbsp; 9.2k views</div>
+            </div>
+            <div class="content-card">
+              <span class="ctag ctag-meme">Meme</span>
+              <div class="card-title">NPC Trend</div>
+              <div class="card-meta">Gen Alpha &nbsp;·&nbsp; 7.4k views</div>
+            </div>
+            <div class="content-card">
+              <span class="ctag ctag-trend">Trend</span>
+              <div class="card-title">Brain rot</div>
+              <div class="card-meta">Gen Z / Alpha &nbsp;·&nbsp; Rising</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION: Trending memes -->
+        <div class="section-block">
+          <div class="section-header">
+            <div class="section-title">
+              <i class="bi bi-fire icon-red"></i>
+              Trending memes
+            </div>
+            <span class="section-link">See all</span>
+          </div>
+          <div class="cards-grid-3">
+            <div class="content-card">
+              <div class="meme-img meme-yellow">💀</div>
+              <div class="card-title">Skill issue</div>
+              <div class="meme-reacts">
+                <span class="react-pill">🔥 1.2k</span>
+                <span class="react-pill">💀 412</span>
+              </div>
+            </div>
+            <div class="content-card">
+              <div class="meme-img meme-green">🗿</div>
+              <div class="card-title">Moai vibes</div>
+              <div class="meme-reacts">
+                <span class="react-pill">🔥 3.2k</span>
+                <span class="react-pill">😭 890</span>
+              </div>
+            </div>
+            <div class="content-card">
+              <div class="meme-img meme-purple">✨</div>
+              <div class="card-title">Delulu szn</div>
+              <div class="meme-reacts">
+                <span class="react-pill">🔥 1.8k</span>
+                <span class="react-pill">💀 340</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION: Community feed -->
+        <div class="section-block">
+          <div class="section-header">
+            <div class="section-title">
+              <i class="bi bi-people-fill icon-purple"></i>
+              Community feed
+            </div>
+            <span class="section-link">View all</span>
+          </div>
+          <div class="feed-list">
+            <div class="feed-item">
+              <div class="avatar av-purple">MK</div>
+              <div class="feed-text">
+                Added new slang: <strong>Delulu</strong> — Gen Z · "being
+                delusional in a fun way"
+              </div>
+              <div class="feed-time">2m ago</div>
+            </div>
+            <div class="feed-item">
+              <div class="avatar av-amber">RS</div>
+              <div class="feed-text">
+                Uploaded meme: <strong>Hawk Tuah</strong> tagged Gen Z
+              </div>
+              <div class="feed-time">5m ago</div>
+            </div>
+            <div class="feed-item">
+              <div class="avatar av-green">JL</div>
+              <div class="feed-text">
+                Reacted 🔥 to trend: <strong>Skibidi Toilet</strong>
+              </div>
+              <div class="feed-time">9m ago</div>
+            </div>
+            <div class="feed-item">
+              <div class="avatar av-pink">NB</div>
+              <div class="feed-text">
+                Bookmarked slang: <strong>No Cap</strong> · Gen Z
+              </div>
+              <div class="feed-time">12m ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end left column -->
+
+      <!-- ── RIGHT SIDEBAR ── -->
+      <div>
+        <!-- Top slangs -->
+        <div class="sidebar-card">
+          <div class="sidebar-title">
+            <i class="bi bi-graph-up-arrow icon-green icon-sm"></i>
+            Top slangs
+          </div>
+          <div class="top-slang-item">
+            <span class="rank-num">1</span>
+            <span class="slang-word">Rizz</span>
+            <span class="slang-count">9.2k</span>
+          </div>
+          <div class="top-slang-item">
+            <span class="rank-num">2</span>
+            <span class="slang-word">No cap</span>
+            <span class="slang-count">8.7k</span>
+          </div>
+          <div class="top-slang-item">
+            <span class="rank-num">3</span>
+            <span class="slang-word">Delulu</span>
+            <span class="slang-count">6.1k</span>
+          </div>
+          <div class="top-slang-item">
+            <span class="rank-num">4</span>
+            <span class="slang-word">Slay</span>
+            <span class="slang-count">5.4k</span>
+          </div>
+        </div>
+
+        <!-- Browse by generation -->
+        <div class="sidebar-card">
+          <div class="sidebar-title">
+            <i class="bi bi-grid-1x2 icon-purple icon-sm"></i>
+            Browse by era
+          </div>
+          <div class="gen-era-item">
+            <span class="gen-era-name">Gen Alpha</span>
+            <span class="gen-era-count color-pink">214 terms</span>
+          </div>
+          <div class="gen-era-item">
+            <span class="gen-era-name">Gen Z</span>
+            <span class="gen-era-count color-purple">1,840 terms</span>
+          </div>
+          <div class="gen-era-item">
+            <span class="gen-era-name">Millennial</span>
+            <span class="gen-era-count color-green">1,120 terms</span>
+          </div>
+          <div class="gen-era-item">
+            <span class="gen-era-name">Gen X</span>
+            <span class="gen-era-count color-amber">426 terms</span>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-card">
+          <div class="nl-title">Stay in the loop</div>
+          <div class="nl-sub">
+            Weekly digest of top slangs &amp; memes, delivered to your inbox.
+          </div>
+          <input class="nl-input" type="email" placeholder="your@email.com" />
+          <button class="nl-btn">Subscribe</button>
+        </div>
+      </div>
+      <!-- end sidebar -->
+    </div>
+    <!-- end main content -->
+
+    <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">
+            <a href="index.html" class="footer-logo-link">
+              <img
+                src="assets/logo-white.png"
+                alt="EraSync"
+                class="footer-logo-img"
+                height="24"
+                width="auto"
+              />
+            </a>
+          </div>
+          <p class="footer-brand-desc">
+            The cross-generational culture platform — bridging Gen X,
+            Millennials, Gen Z and Gen Alpha through slang, memes and trends.
+          </p>
+          <div class="footer-socials">
+            <div class="social-icon"><i class="bi bi-twitter-x"></i></div>
+            <div class="social-icon"><i class="bi bi-instagram"></i></div>
+            <div class="social-icon"><i class="bi bi-tiktok"></i></div>
+            <div class="social-icon"><i class="bi bi-youtube"></i></div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a>Slang dictionary</a>
+          <a>Meme gallery</a>
+          <a>Trending now</a>
+          <a>Gen timeline</a>
+        </div>
+        <div class="footer-col">
+          <h5>Community</h5>
+          <a>Submit slang</a>
+          <a>Upload meme</a>
+          <a>Leaderboard</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a>About us</a>
+          <a>Privacy policy</a>
+          <a>Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 EraSync. All rights reserved.</span>
+        <div class="footer-gen-badges">
+          <span class="gen-badge badge-x">Gen X</span>
+          <span class="gen-badge badge-m">Millennial</span>
+          <span class="gen-badge badge-z">Gen Z</span>
+          <span class="gen-badge badge-a">Gen Alpha</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Our custom JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
