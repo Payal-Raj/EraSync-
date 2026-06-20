@@ -16,6 +16,9 @@ app.use("/api/slangs", slangRoutes);
 const memesRoutes  = require("./routes/memes.routes");
 app.use("/api/memes", memesRoutes);
 
+const memesTrends  = require("./routes/trends.routes");
+app.use("/api/trends", memesTrends);
+
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
