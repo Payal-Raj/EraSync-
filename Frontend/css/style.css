@@ -728,20 +728,20 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #475569;
+  color: #64748b;
   margin-bottom: 14px;
 }
 
 .footer-col a {
   display: block;
   font-size: 13px;
-  color: #64748b;
+  color: #94a3b8 !important;;
   margin-bottom: 9px;
   cursor: pointer;
   transition: color 0.15s;
 }
 
-.footer-col a:hover { color: #94a3b8; }
+.footer-col a:hover { color:  #e2e8f0 !important; }
 
 .footer-bottom {
   display: flex;
@@ -755,7 +755,7 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
 }
 
-.footer-copy { font-size: 12px; color: #374151; }
+.footer-copy { font-size: 12px; color:  #64748b; }
 .footer-gen-badges { display: flex; gap: 6px; flex-wrap: wrap; }
 
 .gen-badge { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; }

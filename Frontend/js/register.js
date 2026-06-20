@@ -1,7 +1,3 @@
-// ─────────────────────────────────────────────
-// ERASYNC — register.js
-// Handles user registration
-// ─────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
   const registerForm = document.getElementById('registerForm');
@@ -10,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnText = document.getElementById('registerBtnText');
   const btnSpinner = document.getElementById('registerBtnSpinner');
 
-  // Toggle password visibility
   const togglePasswordBtn = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
   const passwordIcon = document.getElementById('passwordIcon');
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Username validation (alphanumeric only)
   const usernameInput = document.getElementById('username');
   if (usernameInput) {
     usernameInput.addEventListener('input', () => {
@@ -40,15 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Form submission
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Reset alert
     alertDiv.classList.add('d-none');
     alertDiv.textContent = '';
     
-    // Validate terms checkbox
     const termsCheckbox = document.getElementById('terms');
     if (!termsCheckbox.checked) {
       termsCheckbox.classList.add('is-invalid');
@@ -58,13 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
       termsCheckbox.classList.remove('is-invalid');
     }
 
-    // Get form data
     const username = document.getElementById('username').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
     const generation = document.getElementById('generation').value;
 
-    // Validate all fields
     let isValid = true;
 
     if (!username || username.length < 3) {
@@ -101,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isValid) return;
 
-    // Show loading state
     registerBtn.disabled = true;
     btnText.textContent = 'Creating account...';
     btnSpinner.classList.remove('d-none');
@@ -123,14 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Success - redirect to login
-        showAlert('Account created successfully! Redirecting to login...', 'success');
+        showAlert('Account created successfully!!', 'success');
         setTimeout(() => {
           window.location.href = 'login.html';
         }, 1500);
       } else {
-        // Error from server
-        const errorMsg = data.message || 'Registration failed. Please try again.';
+        const errorMsg = data.error || 'Registration failed. Please try again.';
         showAlert(errorMsg, 'danger');
         // Re-enable button
         registerBtn.disabled = false;
@@ -152,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     alertDiv.classList.remove('d-none');
   }
 
-  // Real-time validation for email
   document.getElementById('email').addEventListener('blur', function() {
     const email = this.value.trim();
     if (email && !email.includes('@')) {
@@ -163,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Real-time validation for password
   document.getElementById('password').addEventListener('input', function() {
     if (this.value.length > 0 && this.value.length < 6) {
       this.classList.add('is-invalid');
@@ -173,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Real-time validation for generation
   document.getElementById('generation').addEventListener('change', function() {
     if (this.value) {
       this.classList.remove('is-invalid');

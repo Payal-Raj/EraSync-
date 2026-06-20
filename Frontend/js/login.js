@@ -1,7 +1,3 @@
-// ─────────────────────────────────────────────
-// ERASYNC — login.js
-// Handles user login
-// ─────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
@@ -10,14 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnText = document.getElementById('loginBtnText');
   const btnSpinner = document.getElementById('loginBtnSpinner');
 
-  // Check if user is already logged in
   const token = localStorage.getItem('erasync_token');
   if (token) {
-    // Optionally redirect to home if already logged in
-    // window.location.href = 'index.html';
+
   }
 
-  // Toggle password visibility
   const togglePasswordBtn = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
   const passwordIcon = document.getElementById('passwordIcon');
@@ -30,19 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Form submission
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // Reset alert
     alertDiv.classList.add('d-none');
     alertDiv.textContent = '';
 
-    // Get form data
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
 
-    // Validate
     let isValid = true;
 
     if (!email || !email.includes('@')) {
@@ -63,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isValid) return;
 
-    // Show loading state
     loginBtn.disabled = true;
     btnText.textContent = 'Logging in...';
     btnSpinner.classList.remove('d-none');
@@ -83,28 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Save token to localStorage
         localStorage.setItem('erasync_token', data.token);
         
-        // Check remember me
         const rememberMe = document.getElementById('rememberMe');
         if (rememberMe && rememberMe.checked) {
-          // Store email for next time (optional)
           localStorage.setItem('remembered_email', email);
         } else {
           localStorage.removeItem('remembered_email');
         }
 
-        // Show success
-        showAlert('Login successful! Redirecting...', 'success');
+        showAlert('Login successful!', 'success');
         
-        // Redirect to home after short delay
         setTimeout(() => {
           window.location.href = 'index.html';
         }, 1000);
       } else {
-        // Error from server
-        const errorMsg = data.message || 'Login failed. Please check your credentials.';
+        const errorMsg = data.error || 'Login failed. Please check your credentials.';
         showAlert(errorMsg, 'danger');
         loginBtn.disabled = false;
         btnText.textContent = 'Log in';
@@ -125,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     alertDiv.classList.remove('d-none');
   }
 
-  // Real-time validation
   document.getElementById('email').addEventListener('blur', function() {
     const email = this.value.trim();
     if (email && !email.includes('@')) {
@@ -142,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Optional: Auto-fill remembered email
   const rememberedEmail = localStorage.getItem('remembered_email');
   if (rememberedEmail) {
     const emailInput = document.getElementById('email');
@@ -154,7 +133,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
-  // Enter key press handler (already handled by form submit)
-  // Add keyboard shortcuts or additional functionality as needed
 });

@@ -30,7 +30,7 @@
     <!-- ═══════════════════════════════════
        NAVBAR (simplified for auth pages)
   ═══════════════════════════════════ -->
-        <!-- ═══════════════════════════════════
+    <!-- ═══════════════════════════════════
        NAVBAR
   ═══════════════════════════════════ -->
     <nav class="site-nav">
@@ -72,28 +72,25 @@
       </div>
     </nav>
 
-    <!-- Dark overlay behind the drawer -->
     <div class="drawer-overlay" id="drawerOverlay"></div>
 
-    <!-- Side drawer (slides in from the right) -->
     <div class="side-drawer" id="sideDrawer">
-      <!-- Drawer header -->
       <div class="drawer-header">
-  <div class="nav-logo">
-    <a href="index.html" class="nav-logo-link">
-      <img 
-        src="assets/logo-white.png" 
-        alt="EraSync Logo" 
-        class="nav-logo-img"
-        height="28"
-        width="auto"
-      />
-    </a>
-  </div>
-  <button class="drawer-close" id="drawerClose" aria-label="Close menu">
-    <i class="bi bi-x-lg"></i>
-  </button>
-</div>
+        <div class="nav-logo">
+          <a href="index.html" class="nav-logo-link">
+            <img
+              src="assets/logo-white.png"
+              alt="EraSync Logo"
+              class="nav-logo-img"
+              height="28"
+              width="auto"
+            />
+          </a>
+        </div>
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
 
       <!-- Drawer nav links -->
       <div class="drawer-links">
@@ -190,19 +187,6 @@
                       required
                       minlength="6"
                     />
-                    <button
-                      class="btn btn-outline-secondary toggle-password"
-                      type="button"
-                      id="togglePassword"
-                      aria-label="Toggle password visibility"
-                      title="Show or hide password"
-                    >
-                      <i
-                        class="bi bi-eye"
-                        id="passwordIcon"
-                        aria-hidden="true"
-                      ></i>
-                    </button>
                   </div>
                   <div class="invalid-feedback" id="passwordFeedback"></div>
                   <small class="text-muted">At least 6 characters</small>
@@ -219,15 +203,10 @@
                     ></span>
                     <select class="form-select" id="generation" required>
                       <option value="">Select your generation...</option>
-                      <option value="Gen Z">Gen Z (1997–2012)</option>
-                      <option value="Millennials">
-                        Millennials (1981–1996)
-                      </option>
                       <option value="Gen X">Gen X (1965–1980)</option>
-                      <option value="Boomers">Boomers (1946–1964)</option>
-                      <option value="Silent">
-                        Silent Generation (1928–1945)
-                      </option>
+                      <option value="Millennial">Millennial (1981–1996)</option>
+                      <option value="Gen Z">Gen Z (1997–2012)</option>
+                      <option value="Gen Alpha">Gen Alpha (2013+)</option>
                     </select>
                   </div>
                   <div class="invalid-feedback" id="generationFeedback"></div>
@@ -315,22 +294,22 @@
         </div>
         <div class="footer-col">
           <h5>Explore</h5>
-          <a>Slang dictionary</a>
-          <a>Meme gallery</a>
-          <a>Trending now</a>
-          <a>Gen timeline</a>
+          <a href="#">Slang dictionary</a>
+          <a href="#">Meme gallery</a>
+          <a href="#">Trending now</a>
+          <a href="#">Gen timeline</a>
         </div>
         <div class="footer-col">
           <h5>Community</h5>
-          <a>Submit slang</a>
-          <a>Upload meme</a>
-          <a>Leaderboard</a>
+          <a href="#">Submit slang</a>
+          <a href="#">Upload meme</a>
+          <a href="#">Leaderboard</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a>About us</a>
-          <a>Privacy policy</a>
-          <a>Contact</a>
+          <a href="#">About us</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Contact</a>
         </div>
       </div>
       <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto">
