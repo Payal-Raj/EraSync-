@@ -37,6 +37,12 @@ app.use("/api/users", userRoutes);
 const followRoutes = require("./routes/followers.routes");
 app.use("/api/follow", followRoutes);
 
+const notificationRoutes = require("./routes/notifications.routes");
+app.use("/api/notifications", notificationRoutes);
+
+const analyticsRoutes = require("./routes/analytics.routes");
+app.use("/api/analytics", analyticsRoutes);
+
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
